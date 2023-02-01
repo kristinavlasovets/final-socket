@@ -7,6 +7,7 @@ const io = require('socket.io')(PORT, {
 		origin: process.env.CLIENT_URL,
 	},
 });
+
 io.on('connection', (socket) => {
 	console.log('User is connected');
 	socket.on('sendComment', ({name, userId, reviewId, desc}) => {
